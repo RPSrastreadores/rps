@@ -392,3 +392,134 @@
 2025-08-02 18:06:13  INFO: Started o.e.j.s.ServletContextHandler@3633906e{/,null,AVAILABLE}
 2025-08-02 18:06:13  INFO: Started ServerConnector@41a57497{HTTP/1.1, (http/1.1)}{0.0.0.0:8082}
 2025-08-02 18:06:13  INFO: Started Server@21e37205{STARTING}[11.0.25,sto=0] @3755ms
+2025-08-19 00:28:25  INFO: Operating system name: Linux version: 6.9.3-76060903-generic architecture: amd64
+2025-08-19 00:28:25  INFO: Java runtime name: OpenJDK 64-Bit Server VM vendor: Ubuntu version: 17.0.14+7-Ubuntu-122.04.1
+2025-08-19 00:28:25  INFO: Memory limit heap: 3930mb non-heap: 0mb
+2025-08-19 00:28:25  INFO: Character encoding: UTF-8
+2025-08-19 00:28:25  INFO: Version: 6.8.1
+2025-08-19 00:28:25  INFO: Starting server...
+2025-08-19 00:28:26  INFO: HikariPool-1 - Starting...
+2025-08-19 00:28:27  INFO: HikariPool-1 - Added connection conn0: url=jdbc:h2:./data/database user=SA
+2025-08-19 00:28:27  INFO: HikariPool-1 - Start completed.
+2025-08-19 00:28:27  INFO: Set default schema name to PUBLIC
+2025-08-19 00:28:27  INFO: Clearing database change log checksums
+2025-08-19 00:28:27  INFO: Successfully acquired change log lock
+2025-08-19 00:28:27  INFO: Successfully released change log lock
+2025-08-19 00:28:30  INFO: Reading from PUBLIC.DATABASECHANGELOG
+2025-08-19 00:28:31  INFO: Reading from PUBLIC.DATABASECHANGELOG
+2025-08-19 00:28:31  INFO: Reading from PUBLIC.DATABASECHANGELOG
+2025-08-19 00:28:31  INFO: UPDATE SUMMARY
+2025-08-19 00:28:31  INFO: Run:                          0
+2025-08-19 00:28:31  INFO: Previously run:              28
+2025-08-19 00:28:31  INFO: Filtered out:                 0
+2025-08-19 00:28:31  INFO: -------------------------------
+2025-08-19 00:28:31  INFO: Total change sets:           28
+
+2025-08-19 00:28:31  INFO: Update summary generated
+2025-08-19 00:28:31  INFO: Successfully released change log lock
+2025-08-19 00:28:31  INFO: Command execution complete
+2025-08-19 00:28:34  INFO: jetty-11.0.25; built: 2025-03-13T00:15:57.301Z; git: a2e9fae3ad8320f2a713d4fa29bba356a99d1295; jvm 17.0.14+7-Ubuntu-122.04.1
+2025-08-19 00:28:34  INFO: Started o.t.w.@796cf3ac{/,null,AVAILABLE}
+2025-08-19 00:28:34  INFO: Session workerName=node0
+2025-08-19 00:28:35  INFO: Started o.e.j.s.ServletContextHandler@44deb90c{/,null,AVAILABLE}
+2025-08-19 00:28:35  INFO: Started ServerConnector@4e71bd40{HTTP/1.1, (http/1.1)}{0.0.0.0:8082}
+2025-08-19 00:28:35  INFO: Started Server@7ce3acc0{STARTING}[11.0.25,sto=0] @11290ms
+2025-08-19 00:34:24  INFO: Stopping server...
+2025-08-19 00:35:14  INFO: Operating system name: Linux version: 6.9.3-76060903-generic architecture: amd64
+2025-08-19 00:35:15  INFO: Java runtime name: OpenJDK 64-Bit Server VM vendor: Ubuntu version: 17.0.14+7-Ubuntu-122.04.1
+2025-08-19 00:35:15  INFO: Memory limit heap: 3930mb non-heap: 0mb
+2025-08-19 00:35:15  INFO: Character encoding: UTF-8
+2025-08-19 00:35:15  INFO: Version: 6.8.1
+2025-08-19 00:35:15  INFO: Starting server...
+2025-08-19 00:35:15  INFO: HikariPool-1 - Starting...
+2025-08-19 00:35:16  INFO: HikariPool-1 - Added connection conn0: url=jdbc:h2:./data/database user=SA
+2025-08-19 00:35:16  INFO: HikariPool-1 - Start completed.
+2025-08-19 00:35:16  INFO: Set default schema name to PUBLIC
+2025-08-19 00:35:16  INFO: Clearing database change log checksums
+2025-08-19 00:35:16  INFO: Successfully acquired change log lock
+2025-08-19 00:35:16  INFO: Successfully released change log lock
+2025-08-19 00:35:19  INFO: Reading from PUBLIC.DATABASECHANGELOG
+2025-08-19 00:35:19  INFO: Reading from PUBLIC.DATABASECHANGELOG
+2025-08-19 00:35:19  INFO: Reading from PUBLIC.DATABASECHANGELOG
+2025-08-19 00:35:20  INFO: UPDATE SUMMARY
+2025-08-19 00:35:20  INFO: Run:                          0
+2025-08-19 00:35:20  INFO: Previously run:              28
+2025-08-19 00:35:20  INFO: Filtered out:                 0
+2025-08-19 00:35:20  INFO: -------------------------------
+2025-08-19 00:35:20  INFO: Total change sets:           28
+
+2025-08-19 00:35:20  INFO: Update summary generated
+2025-08-19 00:35:20  INFO: Successfully released change log lock
+2025-08-19 00:35:20  INFO: Command execution complete
+2025-08-19 00:35:22  INFO: jetty-11.0.25; built: 2025-03-13T00:15:57.301Z; git: a2e9fae3ad8320f2a713d4fa29bba356a99d1295; jvm 17.0.14+7-Ubuntu-122.04.1
+2025-08-19 00:35:22  INFO: Started o.t.w.@5f8d691c{/,null,AVAILABLE}
+2025-08-19 00:35:22  INFO: Session workerName=node0
+2025-08-19 00:35:24  INFO: Started o.e.j.s.ServletContextHandler@2bc8e85b{/,null,AVAILABLE}
+2025-08-19 00:35:24  INFO: Started ServerConnector@6b6d7fe2{HTTP/1.1, (http/1.1)}{0.0.0.0:8082}
+2025-08-19 00:35:24  INFO: Started Server@485d6a85{STARTING}[11.0.25,sto=0] @10358ms
+2025-08-19 00:58:38  INFO: Stopping server...
+2025-08-19 00:59:58  INFO: Operating system name: Linux version: 6.9.3-76060903-generic architecture: amd64
+2025-08-19 00:59:58  INFO: Java runtime name: OpenJDK 64-Bit Server VM vendor: Ubuntu version: 17.0.14+7-Ubuntu-122.04.1
+2025-08-19 00:59:58  INFO: Memory limit heap: 3930mb non-heap: 0mb
+2025-08-19 00:59:58  INFO: Character encoding: UTF-8
+2025-08-19 00:59:58  INFO: Version: 6.8.1
+2025-08-19 00:59:58  INFO: Starting server...
+2025-08-19 00:59:58  INFO: HikariPool-1 - Starting...
+2025-08-19 01:00:00  INFO: HikariPool-1 - Added connection conn0: url=jdbc:h2:./data/database user=SA
+2025-08-19 01:00:00  INFO: HikariPool-1 - Start completed.
+2025-08-19 01:00:00  INFO: Set default schema name to PUBLIC
+2025-08-19 01:00:00  INFO: Clearing database change log checksums
+2025-08-19 01:00:00  INFO: Successfully acquired change log lock
+2025-08-19 01:00:00  INFO: Successfully released change log lock
+2025-08-19 01:00:04  INFO: Reading from PUBLIC.DATABASECHANGELOG
+2025-08-19 01:00:04  INFO: Reading from PUBLIC.DATABASECHANGELOG
+2025-08-19 01:00:04  INFO: Reading from PUBLIC.DATABASECHANGELOG
+2025-08-19 01:00:04  INFO: UPDATE SUMMARY
+2025-08-19 01:00:04  INFO: Run:                          0
+2025-08-19 01:00:04  INFO: Previously run:              28
+2025-08-19 01:00:04  INFO: Filtered out:                 0
+2025-08-19 01:00:04  INFO: -------------------------------
+2025-08-19 01:00:04  INFO: Total change sets:           28
+
+2025-08-19 01:00:04  INFO: Update summary generated
+2025-08-19 01:00:04  INFO: Successfully released change log lock
+2025-08-19 01:00:04  INFO: Command execution complete
+2025-08-19 01:00:07  INFO: jetty-11.0.25; built: 2025-03-13T00:15:57.301Z; git: a2e9fae3ad8320f2a713d4fa29bba356a99d1295; jvm 17.0.14+7-Ubuntu-122.04.1
+2025-08-19 01:00:07  INFO: Started o.t.w.@1c290990{/,null,AVAILABLE}
+2025-08-19 01:00:07  INFO: Session workerName=node0
+2025-08-19 01:00:09  INFO: Started o.e.j.s.ServletContextHandler@5bee83b5{/,null,AVAILABLE}
+2025-08-19 01:00:09  INFO: Started ServerConnector@83f79ad{HTTP/1.1, (http/1.1)}{0.0.0.0:8082}
+2025-08-19 01:00:09  INFO: Started Server@56576db2{STARTING}[11.0.25,sto=0] @13096ms
+2025-08-19 01:24:02  INFO: Stopping server...
+2025-08-19 19:21:31  INFO: Operating system name: Linux version: 6.9.3-76060903-generic architecture: amd64
+2025-08-19 19:21:31  INFO: Java runtime name: OpenJDK 64-Bit Server VM vendor: Ubuntu version: 17.0.14+7-Ubuntu-122.04.1
+2025-08-19 19:21:31  INFO: Memory limit heap: 3930mb non-heap: 0mb
+2025-08-19 19:21:31  INFO: Character encoding: UTF-8
+2025-08-19 19:21:31  INFO: Version: 6.8.1
+2025-08-19 19:21:31  INFO: Starting server...
+2025-08-19 19:21:32  INFO: HikariPool-1 - Starting...
+2025-08-19 19:21:33  INFO: HikariPool-1 - Added connection conn0: url=jdbc:h2:./data/database user=SA
+2025-08-19 19:21:33  INFO: HikariPool-1 - Start completed.
+2025-08-19 19:21:33  INFO: Set default schema name to PUBLIC
+2025-08-19 19:21:33  INFO: Clearing database change log checksums
+2025-08-19 19:21:33  INFO: Successfully acquired change log lock
+2025-08-19 19:21:33  INFO: Successfully released change log lock
+2025-08-19 19:21:36  INFO: Reading from PUBLIC.DATABASECHANGELOG
+2025-08-19 19:21:36  INFO: Reading from PUBLIC.DATABASECHANGELOG
+2025-08-19 19:21:36  INFO: Reading from PUBLIC.DATABASECHANGELOG
+2025-08-19 19:21:36  INFO: UPDATE SUMMARY
+2025-08-19 19:21:36  INFO: Run:                          0
+2025-08-19 19:21:36  INFO: Previously run:              28
+2025-08-19 19:21:36  INFO: Filtered out:                 0
+2025-08-19 19:21:36  INFO: -------------------------------
+2025-08-19 19:21:36  INFO: Total change sets:           28
+
+2025-08-19 19:21:36  INFO: Update summary generated
+2025-08-19 19:21:36  INFO: Successfully released change log lock
+2025-08-19 19:21:37  INFO: Command execution complete
+2025-08-19 19:21:39  INFO: jetty-11.0.25; built: 2025-03-13T00:15:57.301Z; git: a2e9fae3ad8320f2a713d4fa29bba356a99d1295; jvm 17.0.14+7-Ubuntu-122.04.1
+2025-08-19 19:21:39  INFO: Started o.t.w.@1c290990{/,null,AVAILABLE}
+2025-08-19 19:21:39  INFO: Session workerName=node0
+2025-08-19 19:21:40  INFO: Started o.e.j.s.ServletContextHandler@5bee83b5{/,null,AVAILABLE}
+2025-08-19 19:21:40  INFO: Started ServerConnector@83f79ad{HTTP/1.1, (http/1.1)}{0.0.0.0:8082}
+2025-08-19 19:21:40  INFO: Started Server@56576db2{STARTING}[11.0.25,sto=0] @10836ms
