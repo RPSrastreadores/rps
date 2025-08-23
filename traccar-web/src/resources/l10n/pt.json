@@ -610,7 +610,6 @@
     "categoryMotorcycle": "Mota",
     "categoryPerson": "Pessoa",
     "categoryPlane": "Avião",
-    "categoryRedCar": "Carro Vermelho",
     "categoryShip": "Barco",
     "categoryTractor": "Tractor",
     "categoryTrailer": "Trailer",
@@ -620,5 +619,6 @@
     "categoryVan": "Caravana",
     "categoryScooter": "Scooter",
     "maintenanceStart": "Iniciar",
-    "maintenancePeriod": "Período"
+    "maintenancePeriod": "Período",
+    "categoryRedCar": "Carro Vermelho"
 }

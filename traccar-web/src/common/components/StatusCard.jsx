@@ -18,6 +18,11 @@ import {
   TableFooter,
   Link,
   Tooltip,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
 } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 import CloseIcon from '@mui/icons-material/Close';
@@ -26,6 +31,12 @@ import PublishIcon from '@mui/icons-material/Publish';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import PendingIcon from '@mui/icons-material/Pending';
+import GpsFixedIcon from '@mui/icons-material/GpsFixed';
+import AnchorIcon from '@mui/icons-material/Anchor';
+import StreetviewIcon from '@mui/icons-material/Streetview';
+import LockOutlineIcon from '@mui/icons-material/LockOutline';
+import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 import { useTranslation } from './LocalizationProvider';
 import RemoveDialog from './RemoveDialog';
@@ -66,7 +77,7 @@ const useStyles = makeStyles()((theme, { desktopPadding }) => ({
   icon: {
     width: '25px',
     height: '25px',
-    filter: 'brightness(0) invert(1)',
+    // filter: 'brightness(0) invert(1)',
   },
   table: {
     '& .MuiTableCell-sizeSmall': {
@@ -139,6 +150,7 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
   const [anchorEl, setAnchorEl] = useState(null);
 
   const [removing, setRemoving] = useState(false);
+  const [confirmDialog, setConfirmDialog] = useState({ open: false, type: null, command: null });
 
   const handleRemove = useCatch(async (removed) => {
     if (removed) {
@@ -177,6 +189,45 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
       throw Error(await response.text());
     }
   }, [navigate, position]);
+
+  const handleEngineStop = () => {
+    setConfirmDialog({
+      open: true,
+      type: 'stop',
+      command: {
+        deviceId: parseInt(deviceId, 10),
+        type: 'engineStop',
+      }
+    });
+  };
+
+  const handleEngineResume = () => {
+    setConfirmDialog({
+      open: true,
+      type: 'resume',
+      command: {
+        deviceId: parseInt(deviceId, 10),
+        type: 'engineResume',
+      }
+    });
+  };
+
+  const handleConfirmCommand = useCatchCallback(async () => {
+    const response = await fetch('/api/commands/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(confirmDialog.command),
+    });
+    if (response.ok) {
+      setConfirmDialog({ open: false, type: null, command: null });
+    } else {
+      throw Error(await response.text());
+    }
+  }, [confirmDialog.command]);
+
+  const handleCancelCommand = () => {
+    setConfirmDialog({ open: false, type: null, command: null });
+  };
 
   return (
     <>
@@ -248,13 +299,51 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
                 </CardContent>
               )}
               <CardActions classes={{ root: classes.actions }} disableSpacing>
-                <Tooltip title={t('sharedExtra')}>
+                {/* <Tooltip title={t('sharedExtra')}>
                   <IconButton
                     color="secondary"
                     onClick={(e) => setAnchorEl(e.currentTarget)}
                     disabled={!position}
                   >
                     <PendingIcon />
+                  </IconButton>
+                </Tooltip> */}
+                <Tooltip title={t('sharedCreateGeofence')}>
+                  <IconButton
+                    color="secondary"
+                    onClick={handleGeofence}
+                    disabled={disableActions || !position || readonly}
+                  >
+                    <AnchorIcon />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title={t('linkStreetView')}>
+                  <IconButton
+                    sx={{ color: 'blue.main' }}
+                    component="a"
+                    target="_blank"
+                    href={`https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${position?.latitude}%2C${position?.longitude}&heading=${position?.course}`}
+                    disabled={!position}
+                  >
+                    <StreetviewIcon />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title={t('commandEngineStop')}>
+                  <IconButton
+                    sx={{ color: 'error.main' }}
+                    onClick={handleEngineStop}
+                    disabled={disableActions}
+                  >
+                    <LockOutlineIcon />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title={t('commandEngineResume')}>
+                  <IconButton
+                    sx={{ color: 'success.main' }}
+                    onClick={handleEngineResume}
+                    disabled={disableActions}
+                  >
+                    <LockOpenOutlinedIcon />
                   </IconButton>
                 </Tooltip>
                 <Tooltip title={t('reportReplay')}>
@@ -265,14 +354,14 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
                     <ReplayIcon />
                   </IconButton>
                 </Tooltip>
-                <Tooltip title={t('commandTitle')}>
+                {/* <Tooltip title={t('commandTitle')}>
                   <IconButton
                     onClick={() => navigate(`/settings/device/${deviceId}/command`)}
                     disabled={disableActions}
                   >
                     <PublishIcon />
                   </IconButton>
-                </Tooltip>
+                </Tooltip> */}
                 <Tooltip title={t('sharedEdit')}>
                   <IconButton
                     onClick={() => navigate(`/settings/device/${deviceId}`)}
@@ -313,6 +402,52 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
         itemId={deviceId}
         onResult={(removed) => handleRemove(removed)}
       />
+      <Dialog open={confirmDialog.open} onClose={handleCancelCommand}>
+        <DialogTitle>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              {confirmDialog.type === 'stop' ? (
+                <LockOutlineIcon sx={{ fontSize: 24, color: 'error.main' }} />
+              ) : (
+                <LockOpenOutlinedIcon sx={{ fontSize: 24, color: 'success.main' }} />
+              )}
+              <span>
+                {confirmDialog.type === 'stop' ? 'Parar Motor' : 'Religar Motor'}
+              </span>
+            </div>
+            <IconButton
+              size="small"
+              onClick={handleCancelCommand}
+              sx={{ color: 'error.main' }}
+            >
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          </div>
+        </DialogTitle>
+        <DialogContent>
+          <div style={{ marginBottom: '16px' }}>
+            <Typography variant="body2" color="text.secondary">
+              Dispositivo: <strong>{device?.name}</strong>
+            </Typography>
+          </div>
+          <Typography variant="body1">
+            {confirmDialog.type === 'stop' 
+              ? 'Você tem certeza que deseja parar o motor deste veículo? Esta ação irá bloquear o motor e impedir que o veículo seja ligado.'
+              : 'Você tem certeza que deseja religar o motor deste veículo? Esta ação irá desbloquear o motor e permitir que o veículo seja ligado.'
+            }
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button 
+            onClick={handleConfirmCommand} 
+            color={confirmDialog.type === 'stop' ? 'error' : 'success'}
+            variant="contained"
+            fullWidth
+          >
+            {t('commandSend')}
+          </Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
 };

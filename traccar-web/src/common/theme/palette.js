@@ -1,4 +1,4 @@
-import { grey } from '@mui/material/colors';
+import { grey, blue } from '@mui/material/colors';
 
 const validatedColor = (color) => (/^#([0-9A-Fa-f]{3}){1,2}$/.test(color) ? color : null);
 
@@ -32,5 +32,8 @@ export default (server, darkMode) => ({
   },
   geometry: {
     main: goldPalette[500],
+  },
+  blue: {
+    main: blue[500],
   },
 });

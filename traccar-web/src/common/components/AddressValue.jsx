@@ -11,12 +11,7 @@ const AddressValue = ({ latitude, longitude, originalAddress }) => {
 
   const [address, setAddress] = useState();
 
-  useEffect(() => {
-    setAddress(originalAddress);
-  }, [latitude, longitude, originalAddress]);
-
-  const showAddress = useCatch(async (event) => {
-    event.preventDefault();
+  const fetchAddress = useCatch(async () => {
     const query = new URLSearchParams({ latitude, longitude });
     const response = await fetch(`/api/server/geocode?${query.toString()}`);
     if (response.ok) {
@@ -24,6 +19,20 @@ const AddressValue = ({ latitude, longitude, originalAddress }) => {
     } else {
       throw Error(await response.text());
     }
+  });
+
+  useEffect(() => {
+    if (originalAddress) {
+      setAddress(originalAddress);
+    } else if (addressEnabled && latitude && longitude) {
+      // Buscar endereço automaticamente se não existir um endereço original
+      fetchAddress();
+    }
+  }, [latitude, longitude, originalAddress, addressEnabled]);
+
+  const showAddress = useCatch(async (event) => {
+    event.preventDefault();
+    await fetchAddress();
   });
 
   if (address) {

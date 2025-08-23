@@ -610,7 +610,6 @@
     "categoryMotorcycle": "Motorcycle",
     "categoryPerson": "Person",
     "categoryPlane": "Plane",
-    "categoryRedCar": "Red Car",
     "categoryShip": "Ship",
     "categoryTractor": "Tractor",
     "categoryTrailer": "Trailer",
@@ -620,5 +619,6 @@
     "categoryVan": "Van",
     "categoryScooter": "Scooter",
     "maintenanceStart": "Start",
-    "maintenancePeriod": "Period"
+    "maintenancePeriod": "Period",
+    "categoryRedCar": "Red Car"
 }
