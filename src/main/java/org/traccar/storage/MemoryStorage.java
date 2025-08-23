@@ -43,7 +43,7 @@ public class MemoryStorage extends Storage {
     public MemoryStorage() {
         Server server = new Server();
         server.setId(1);
-        server.setRegistration(true);
+        server.setRegistration(false);
         objects.put(Server.class, Map.of(server.getId(), server));
     }
 
