@@ -228,7 +228,7 @@ const LoginPage = () => {
           </Button>
         )}
         <div className={classes.extraContainer}>
-          {registrationEnabled && (
+          {/* {registrationEnabled && (
             <Link
               onClick={() => navigate('/register')}
               className={classes.link}
@@ -237,7 +237,7 @@ const LoginPage = () => {
             >
               {t('loginRegister')}
             </Link>
-          )}
+          )} */}
           {emailEnabled && (
             <Link
               onClick={() => navigate('/reset-password')}

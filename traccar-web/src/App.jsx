@@ -52,7 +52,8 @@ const App = () => {
       if (response.ok) {
         dispatch(sessionActions.updateUser(await response.json()));
       } else if (newServer) {
-        navigate('/register');
+        // navigate('/register');
+        navigate('/login');
       } else {
         navigate('/login');
       }
